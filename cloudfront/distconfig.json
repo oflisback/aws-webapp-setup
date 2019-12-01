@@ -28,7 +28,7 @@
       "Enabled": false,
       "Quantity": 0
     },
-    "ViewerProtocolPolicy": "allow-all",
+    "ViewerProtocolPolicy": "redirect-to-https",
     "MinTTL": 3600
   },
   "CacheBehaviors": {
