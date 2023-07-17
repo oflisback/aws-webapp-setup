@@ -9,6 +9,7 @@ Here's a post from someone trying to accomplish pretty much the same thing as me
 ## Prerequisites
 
 - [AWS CLI](https://aws.amazon.com/cli/) installed and configured with access credentials and region.
+- IAM user with e.g. AmazonS3FullAccess and CloudFrontFullAccess policies
 - Domain name registered and directed to [Route 53](https://aws.amazon.com/route53/) hosted zone.
 
 ## Instructions

@@ -16,5 +16,8 @@ aws s3 website s3://$1/ --index-document index.html --error-document error.html
 
 sed "s/BUCKET/$1/g" ./read-access-policy.json | tee /tmp/read-access-policy.json
 
+# Disable "Block public access"
+aws s3api put-public-access-block --bucket $1 --public-access-block-configuration \
+  "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
 # Apply anonymous read access policy
 aws s3api put-bucket-policy --bucket $1 --policy file:///tmp/read-access-policy.json

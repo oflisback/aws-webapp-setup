@@ -12,10 +12,17 @@
 # Press continue
 # In the summary, expand the domain that is now "Pending validation"
 # Press Create route in Route 53 and press confirm button.
+#
+# Then go into the certificate and select "Create records in route 53" to enable the certificate validation.
 
 # After a while I edited the cloudfront distribution again, had to reenter the CNAME
 # and select to use Custom SSL certificate. At this point the previously requested certificate
 # was selectable and the cloudfront setup could be completed. :)
+#
+# Afterwards I had to change the origin in cloudfront to point to the local s3 bucket name instead
+# of the global (?) one see
+# https://stackoverflow.com/questions/38735306/aws-cloudfront-redirecting-to-s3-bucket
+# <domain-name>.s3-website.eu-central-1.amazonaws.com#
 
 if [ "$#" -lt 1 ]; then
   echo "This script takes one parameter, the s3 bucket name / hostname."
